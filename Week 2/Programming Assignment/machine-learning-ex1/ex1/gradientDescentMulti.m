@@ -7,6 +7,8 @@ J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
     theta = theta - alpha * (1/m) * (((X*theta) - y)' * X)'; % Vectorized  
+    %notice ((X*theta) - y)' * X account for the summation!
+    
     J_history(iter) = computeCostMulti(X, y, theta);
 end
 
